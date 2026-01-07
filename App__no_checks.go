@@ -12,7 +12,7 @@ func (a *jsiiProxy_App) validateAddToolkitParameters(toolkit Toolkit) error {
 	return nil
 }
 
-func validateNewAppParameters(name *string, server IServer) error {
+func validateNewAppParameters(name *string) error {
 	return nil
 }
 

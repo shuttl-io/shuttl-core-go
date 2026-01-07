@@ -37,7 +37,7 @@ func NewModel_Override(m Model) {
 	)
 }
 
-func Model_OpenAI(identifier *string, apiKey ISecret) IModelFactory {
+func Model_OpenAI(identifier *string, apiKey ISecret, configuration *map[string]interface{}) IModelFactory {
 	_init_.Initialize()
 
 	if err := validateModel_OpenAIParameters(identifier, apiKey); err != nil {
@@ -48,7 +48,7 @@ func Model_OpenAI(identifier *string, apiKey ISecret) IModelFactory {
 	_jsii_.StaticInvoke(
 		"@shuttl-io/core.Model",
 		"openAI",
-		[]interface{}{identifier, apiKey},
+		[]interface{}{identifier, apiKey, configuration},
 		&returns,
 	)
 

@@ -22,13 +22,9 @@ func (a *jsiiProxy_App) validateAddToolkitParameters(toolkit Toolkit) error {
 	return nil
 }
 
-func validateNewAppParameters(name *string, server IServer) error {
+func validateNewAppParameters(name *string) error {
 	if name == nil {
 		return fmt.Errorf("parameter name is required, but nil was provided")
-	}
-
-	if server == nil {
-		return fmt.Errorf("parameter server is required, but nil was provided")
 	}
 
 	return nil

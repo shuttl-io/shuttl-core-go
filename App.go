@@ -11,7 +11,7 @@ type App interface {
 	Server() IServer
 	AddAgent(agent Agent)
 	AddToolkit(toolkit Toolkit)
-	Serve()
+	Serve() *bool
 }
 
 // The jsii proxy struct for App
@@ -53,7 +53,7 @@ func (j *jsiiProxy_App) Server() IServer {
 func NewApp(name *string, server IServer) App {
 	_init_.Initialize()
 
-	if err := validateNewAppParameters(name, server); err != nil {
+	if err := validateNewAppParameters(name); err != nil {
 		panic(err)
 	}
 	j := jsiiProxy_App{}
@@ -99,11 +99,16 @@ func (a *jsiiProxy_App) AddToolkit(toolkit Toolkit) {
 	)
 }
 
-func (a *jsiiProxy_App) Serve() {
-	_jsii_.InvokeVoid(
+func (a *jsiiProxy_App) Serve() *bool {
+	var returns *bool
+
+	_jsii_.Invoke(
 		a,
 		"serve",
 		nil, // no parameters
+		&returns,
 	)
+
+	return returns
 }
 

@@ -5,6 +5,7 @@ import (
 )
 
 type IModelFactoryProps interface {
+	Configuration() *map[string]interface{}
 	SystemPrompt() *string
 	Tools() *[]ITool
 }
@@ -12,6 +13,16 @@ type IModelFactoryProps interface {
 // The jsii proxy for IModelFactoryProps
 type jsiiProxy_IModelFactoryProps struct {
 	_ byte // padding
+}
+
+func (j *jsiiProxy_IModelFactoryProps) Configuration() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"configuration",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IModelFactoryProps) SystemPrompt() *string {

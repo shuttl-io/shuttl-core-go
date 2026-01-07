@@ -222,6 +222,7 @@ func init() {
 		"@shuttl-io/core.IModelFactoryProps",
 		reflect.TypeOf((*IModelFactoryProps)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "configuration", GoGetter: "Configuration"},
 			_jsii_.MemberProperty{JsiiProperty: "systemPrompt", GoGetter: "SystemPrompt"},
 			_jsii_.MemberProperty{JsiiProperty: "tools", GoGetter: "Tools"},
 		},
@@ -321,6 +322,7 @@ func init() {
 		reflect.TypeOf((*IServer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accept", GoMethod: "Accept"},
+			_jsii_.MemberMethod{JsiiMethod: "isRunning", GoMethod: "IsRunning"},
 			_jsii_.MemberMethod{JsiiMethod: "start", GoMethod: "Start"},
 			_jsii_.MemberMethod{JsiiMethod: "stop", GoMethod: "Stop"},
 		},
@@ -414,6 +416,21 @@ func init() {
 		reflect.TypeOf((*ModelToolOutput)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
+		"@shuttl-io/core.NamedPipeServer",
+		reflect.TypeOf((*NamedPipeServer)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "accept", GoMethod: "Accept"},
+			_jsii_.MemberMethod{JsiiMethod: "isRunning", GoMethod: "IsRunning"},
+			_jsii_.MemberMethod{JsiiMethod: "start", GoMethod: "Start"},
+			_jsii_.MemberMethod{JsiiMethod: "stop", GoMethod: "Stop"},
+		},
+		func() interface{} {
+			j := jsiiProxy_NamedPipeServer{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IServer)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
 		"@shuttl-io/core.Outcomes",
 		reflect.TypeOf((*Outcomes)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -494,6 +511,7 @@ func init() {
 		reflect.TypeOf((*StdInServer)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "accept", GoMethod: "Accept"},
+			_jsii_.MemberMethod{JsiiMethod: "isRunning", GoMethod: "IsRunning"},
 			_jsii_.MemberMethod{JsiiMethod: "start", GoMethod: "Start"},
 			_jsii_.MemberMethod{JsiiMethod: "stop", GoMethod: "Stop"},
 		},

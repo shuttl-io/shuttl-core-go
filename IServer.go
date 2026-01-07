@@ -6,6 +6,7 @@ import (
 
 type IServer interface {
 	Accept(app interface{})
+	IsRunning() *bool
 	Start()
 	Stop()
 }
@@ -24,6 +25,19 @@ func (i *jsiiProxy_IServer) Accept(app interface{}) {
 		"accept",
 		[]interface{}{app},
 	)
+}
+
+func (i *jsiiProxy_IServer) IsRunning() *bool {
+	var returns *bool
+
+	_jsii_.Invoke(
+		i,
+		"isRunning",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_IServer) Start() {

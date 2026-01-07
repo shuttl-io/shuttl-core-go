@@ -16,6 +16,10 @@ import (
 type StdInServer interface {
 	IServer
 	Accept(app interface{})
+	// Check if the server is running.
+	//
+	// Returns: true if the server is running, false otherwise.
+	IsRunning() *bool
 	Start()
 	Stop()
 }
@@ -58,6 +62,19 @@ func (s *jsiiProxy_StdInServer) Accept(app interface{}) {
 		"accept",
 		[]interface{}{app},
 	)
+}
+
+func (s *jsiiProxy_StdInServer) IsRunning() *bool {
+	var returns *bool
+
+	_jsii_.Invoke(
+		s,
+		"isRunning",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_StdInServer) Start() {
